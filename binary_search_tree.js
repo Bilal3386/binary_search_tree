@@ -89,6 +89,19 @@ class BST {
             i++
         }
     }
+
+    preOrder() {
+        let current = this.root
+        this.preOrderHelper(current);
+    }
+
+    preOrderHelper(root) {
+        if (root !== null) {
+        console.log(root.val);
+        this.preOrderHelper(root.left);
+        this.preOrderHelper(root.right);
+        }
+    }
 }
 
 const bst = new BST()
@@ -98,4 +111,5 @@ bst.insertNode(3)
 bst.insertNode(6)
 bst.insertNode(7)
 bst.insertNode(1)
+bst.preOrder()
 console.log(bst.search(2))
